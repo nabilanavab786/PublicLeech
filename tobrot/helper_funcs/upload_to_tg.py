@@ -72,7 +72,7 @@ async def upload_to_tg(
             i_m_s_g = await message.reply_text(
                 "Telegram does not support uploading this file.\n"
                 f"Detected File Size: {d_f_s} 😡\n"
-                "\n🤖 trying to split the files 🌝🌝🌚"
+                "\n🤖 trying to split the files 🌚🌝🌝"
             )
             splitted_dir = await split_large_files(local_file_name)
             totlaa_sleif = os.listdir(splitted_dir)
@@ -81,7 +81,7 @@ async def upload_to_tg(
             LOGGER.info(totlaa_sleif)
             ba_se_file_name = os.path.basename(local_file_name)
             await i_m_s_g.edit_text(
-                f"Detected File Size: {d_f_s} 😡\n"
+                f"Detected File Size: {d_f_s} 🙇\n"
                 f"<code>{ba_se_file_name}</code> splitted into {number_of_files} files.\n"
                 "trying to upload to Telegram, now ..."
             )
@@ -119,7 +119,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user):
     #
     try:
         message_for_progress_display = await message.reply_text(
-            "starting upload of {}".format(os.path.basename(local_file_name))
+            "starting upload 📥 of {}".format(os.path.basename(local_file_name))
         )
         if local_file_name.upper().endswith(("MKV", "MP4", "WEBM")):
             metadata = extractMetadata(createParser(local_file_name))
@@ -178,7 +178,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user):
                 reply_to_message_id=message.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
-                    "trying to upload",
+                    "trying to upload 📥",
                     message_for_progress_display,
                     start_time
                 )
@@ -219,7 +219,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user):
                 reply_to_message_id=message.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
-                    "trying to upload",
+                    "trying to upload 📥",
                     message_for_progress_display,
                     start_time
                 )
