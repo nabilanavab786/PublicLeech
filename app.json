@@ -65,6 +65,10 @@
   }, {
     "url": "https://github.com/amivin/aria2-heroku"
   }, {
+    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
+  }, {
+    "url": "https://github.com/HasibulKabir/heroku-buildpack-p7zip"
+  }, {
     "url": "heroku/python"
   }],
   "formation": {
